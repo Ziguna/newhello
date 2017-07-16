@@ -1,0 +1,28 @@
+<html>
+<head>
+<h1>LET'S play the FOOTBALL QUIZ </h1>
+<body>
+<p1>SO LETS SEE ,HOW WELL YOU KNOW ABOUT FOOTBALL </p1>
+<form action="/verify/" method="POST" {% csrf_token %}>
+    
+<div class="container">
+    {%  for games in game %}
+        <h1><b> {{ games.question }}</b></h1>
+        <p2><li><input type="checkbox" name="hello">{{ games.option1 }}</p2>
+        <p3><li><input type="checkbox" name="hello">{{ games.option2 }}</p3>
+        <p4><li><input type="checkbox" name="hello">{{ games.option3 }}</p4>
+        <p5><li><input type="checkbox" name="hello">{{ games.option4 }}</p5>
+		<br>
+		{{games.answer}}
+		
+        <hr>
+		
+    {% endfor %}
+<input type="submit" value="Submit" />	 
+</div>
+</form>
+</body>
+</head>
+
+
+</html>
